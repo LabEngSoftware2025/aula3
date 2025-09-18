@@ -1,5 +1,5 @@
 from flask import Flask, request, jsonify
-from database import db
+from aula3.service.database import db
 from models import Book
 from config import Config
 

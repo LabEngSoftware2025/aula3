@@ -1,4 +1,4 @@
-from database import db
+from aula3.service.database import db
 
 class Book(db.Model):
     __tablename__ = 'books'
