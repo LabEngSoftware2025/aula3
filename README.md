@@ -1,55 +1,51 @@
-# Aula 3
-Criem uma aplicação que permite cadastrar, editar, remover e listar livros para uma biblioteca. Um livro tem um título, autor(as/es), quantidade de páginas e ano de publicação. A aplicação deve ser acessível e manipulável por API REST e os dados devem ser salvos em um banco de dados. Indiquem as URLs para acesso às funcionalidades.
+# Aula 3 - API de gerenciamento de Biblioteca de Livros
 
+Uma API REST para gerenciar livros em um sistema de biblioteca.
 
-# Library Book Management API
-
-A REST API for managing books in a library system.
-
-## Requirements
+## Requisitos
 - Python 3.8+
 - pip
 
-## Installation
+## Instalação
 
-1. Clone or extract the project files
-2. Create a virtual environment:
+1. Clone ou extraia os arquivos do projeto
+2. Crie um ambiente virtual:
    ```bash
    python -m venv venv
-   source venv/bin/activate  # On Windows: venv\Scripts\activate
+   source venv/bin/activate  # No Windows: venv\Scripts\activate
    ```
-3. Install dependencies:
+3. Instale as dependências:
    ```bash
    pip install -r requirements.txt
    ```
-4. Set environment variables (optional):
+4. Configure variáveis de ambiente (opcional):
    ```bash
-   export SECRET_KEY=your-secret-key
+   export SECRET_KEY=sua-chave-secreta
    export DATABASE_URL=sqlite:///library.db
    ```
 
-## Running the Application
+## Executando a Aplicação
 
 ```bash
 python app.py
 ```
 
-The API will be available at `http://localhost:5000`
+A API estará disponível em `http://localhost:5000`
 
-## API Endpoints
+## Endpoints da API
 
-### Books Collection
-- `GET /api/books` - List all books
-- `POST /api/books` - Create a new book
+### Coleção de Livros
+- `GET /api/books` - Listar todos os livros
+- `POST /api/books` - Criar um novo livro
 
-### Single Book
-- `GET /api/books/<id>` - Get a specific book
-- `PUT /api/books/<id>` - Update a book
-- `DELETE /api/books/<id>` - Delete a book
+### Livro Individual
+- `GET /api/books/<id>` - Obter um livro específico
+- `PUT /api/books/<id>` - Atualizar um livro
+- `DELETE /api/books/<id>` - Excluir um livro
 
-## Request/Response Examples
+## Exemplos de Requisição/Resposta
 
-### Create a Book
+### Criar um Livro
 ```bash
 curl -X POST http://localhost:5000/api/books \
   -H "Content-Type: application/json" \
@@ -61,25 +57,25 @@ curl -X POST http://localhost:5000/api/books \
   }'
 ```
 
-### List All Books
+### Listar Todos os Livros
 ```bash
 curl http://localhost:5000/api/books
 ```
 
-### Update a Book
+### Atualizar um Livro
 ```bash
 curl -X PUT http://localhost:5000/api/books/1 \
   -H "Content-Type: application/json" \
   -d '{
-    "title": "Dom Casmurro (Updated)",
+    "title": "Dom Casmurro (Atualizado)",
     "pages": 300
   }'
 ```
 
-### Delete a Book
+### Excluir um Livro
 ```bash
 curl -X DELETE http://localhost:5000/api/books/1
 ```
 
-## Database
-By default, uses SQLite database `library.db` in the project directory.
+## Banco de Dados
+Por padrão, utiliza banco de dados SQLite `library.db` no diretório do projeto.Uma API REST para gerenciar livros em um sistema de biblioteca.
